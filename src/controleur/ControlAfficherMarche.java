@@ -9,8 +9,9 @@ public class ControlAfficherMarche {
 		this.village = village;
 	}
 
-	//Méthode pour récupérer l'état du marché
 	public String[] donnerInfosMarche() {
-		return village.donnerEtatMarche(); 
+		return village.donnerEtatMarche();
 	}
+
+
 }

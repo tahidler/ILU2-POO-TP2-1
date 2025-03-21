@@ -27,11 +27,11 @@ public class BoundaryEmmenager {
 					break;
 
 				case 2:
-				    System.out.println("Bienvenue villageois " + nomVisiteur);
-				    System.out.println("Quelle est votre force ?");
-				    int force = Clavier.entrerEntier("");
-				    controlEmmenager.ajouterGaulois(nomVisiteur, force);
-				    break;
+					System.out.println("Bienvenue Villageois" + nomVisiteur);
+					int force = 0;
+					force = Clavier.entrerEntier("Quelle est votre Force ? : ");
+					controlEmmenager.ajouterGaulois(nomVisiteur, force);
+					break;
 
 				default:
 					System.out
@@ -43,19 +43,18 @@ public class BoundaryEmmenager {
 	}
 
 	private void emmenagerDruide(String nomVisiteur) {
-	    System.out.println("Bienvenue druide " + nomVisiteur);
-	    System.out.println("Quelle est votre force ?");
-	    int force = Clavier.entrerEntier("");
-
-	    System.out.println("Quelle est la force de potion la plus faible que vous produisez ?");
-	    int forceMin = Clavier.entrerEntier("");
-
-	    System.out.println("Quelle est la force de potion la plus forte que vous produisez ?");
-	    int forceMax = Clavier.entrerEntier("");
-
-	    controlEmmenager.ajouterDruide(nomVisiteur, force, forceMin, forceMax);
-	    System.out.println("Le druide " + nomVisiteur + 
-	        " : « Bonjour, je suis le druide " + nomVisiteur + 
-	        " et ma potion peut aller d'une force " + forceMin + " à " + forceMax + " ».");
+		System.out.println("Bienvenue Druide" + nomVisiteur);
+		int forceDruide = 0;
+		int effetPotionMax = 0;
+		int effetPotionMin = 0;
+		forceDruide = Clavier.entrerEntier("Quelle est votre Force ? : ");
+		do {
+			effetPotionMin = Clavier.entrerEntier("Quelle est la potion la plus faible que vous produisez ?");
+			effetPotionMax = Clavier.entrerEntier("Quelle est la potion la plus forte que vous produisez ?");
+			if (effetPotionMax < effetPotionMin) {
+				System.out.println("Attention druide vous avez confondu MIN et MAX");
+			}
+		} while (effetPotionMin > effetPotionMax);
+		controlEmmenager.ajouterDruide(nomVisiteur, forceDruide, effetPotionMin, effetPotionMax);
 	}
 }

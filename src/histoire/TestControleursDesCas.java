@@ -12,16 +12,12 @@ import personnages.Chef;
 import personnages.Gaulois;
 import villagegaulois.Etal;
 import villagegaulois.Village;
-import java.util.Arrays;
 
 public class TestControleursDesCas {
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 
 		//TODO decommenter les cas au fur et a mesure que vous avancez dans le TP
-		
+
 		Village village = new Village("le village des irréductibles", 10, 5);
 		Chef abraracourcix = new Chef("Abraracourcix", 10, village);
 		village.setChef(abraracourcix);
@@ -43,11 +39,11 @@ public class TestControleursDesCas {
 		for (String villageois : nomsVillageois) {
 			System.out.println("- " + villageois);
 		}
-		
+
 //		Sortie Console :
 //		Cas 2 : Emmenager
 //		Le druide Panoramix : « Bonjour, je suis le druide Panoramix et ma potion peut aller d'une force 5 à 7.»
-//		Les villageois sont : 
+//		Les villageois sont :
 //		- Abraracourcix
 //		- le druide Panoramix
 //		- Asterix
@@ -64,7 +60,7 @@ public class TestControleursDesCas {
 		System.out.println("Intrus est un villageois ? " + vendeur);
 
 //		Sortie Console :
-		
+
 //		Cas 3 : Verifier Identification
 //		Panoramix est un villageois ? true
 //		Intrus est un villageois ? false
@@ -106,7 +102,7 @@ public class TestControleursDesCas {
 		} else {
 			System.out.println(" n'est pas trouvé");
 		}
-		
+
 
 //		Sortie Console :
 //		Cas 5 : trouver etal vendeur
@@ -132,13 +128,13 @@ public class TestControleursDesCas {
 			System.out.println(string);
 		}
 		String[] ventesIntrus = controlLibererEtal.libererEtal("Intrus");
-		System.out.println("Les ventes d'Intrus : " + Arrays.toString(ventesIntrus));
-		
+		System.out.println("Les ventes d'Intrus : " + ventesIntrus);
+
 
 //		Sortie Console :
 //		Cas 6 : Liberer etal
-//		Les ventes d'Obelix : 
-//		[0] : un boolean indiquant si l'étal est occupé 
+//		Les ventes d'Obelix :
+//		[0] : un boolean indiquant si l'étal est occupé
 //		[1] : nom du vendeur
 //		[2] : produit vendu
 //		[3] : quantité de produit à vendre au début du marché
@@ -162,7 +158,7 @@ public class TestControleursDesCas {
 		for (String etal : marche) {
 			System.out.println(etal);
 		}
-		
+
 
 //		Sortie Console :
 //		Cas 7 : Afficher Marche
@@ -177,15 +173,13 @@ public class TestControleursDesCas {
 
 		System.out.println("///////////////////////////////");
 		System.out.println("Cas 8 : Acheter Produit");
-		ControlAcheterProduit controlAcheterProduit = new ControlAcheterProduit(
-				controlVerifierIdentite, controlTrouverEtalVendeur, village);
+		ControlAcheterProduit controlAcheterProduit = new ControlAcheterProduit(controlVerifierIdentite, controlTrouverEtalVendeur, village);
 		System.out.println("Obelix a 3 menhir sur son etal");
-		int nbProduitAcheter = controlAcheterProduit.acheterProduit("Obelix",
-				2);
+		int nbProduitAcheter = controlAcheterProduit.acheterProduit("Obelix", 2);
 		System.out.println("Achat de " + nbProduitAcheter + " menhirs sur 2");
 		nbProduitAcheter = controlAcheterProduit.acheterProduit("Obelix", 3);
 		System.out.println("Achat de " + nbProduitAcheter + " menhirs sur 3");
-		
+
 
 //		Sortie Console :
 //		Cas 8 : Acheter Produit
